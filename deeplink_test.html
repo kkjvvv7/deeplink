@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <title>딥링크 테스트</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      padding: 2rem;
+      background-color: #f9f9f9;
+      color: #333;
+    }
+    h1 {
+      color: #007bff;
+    }
+    a {
+      display: block;
+      margin: 1rem 0;
+      font-size: 1.2rem;
+      text-decoration: none;
+      color: #007bff;
+      border: 1px solid #007bff;
+      padding: 0.5rem 1rem;
+      border-radius: 6px;
+      width: fit-content;
+    }
+    a:hover {
+      background-color: #007bff;
+      color: #fff;
+    }
+  </style>
+</head>
+<body>
+  <h1>📱 내집다오 딥링크 테스트 페이지</h1>
+  <p>아래 링크를 클릭하면 앱이 열리거나 앱스토어/플레이스토어로 이동합니다.</p>
+
+  <a href="#" data-path="deep/gonggo">모집공고 리스트</a>
+  <a href="#" data-path="deep/gonggo/ggnum/13002">공고 상세화면</a>
+  <a href="#" data-path="deep/gonggo/ggnum-cm/13002">공고 상세화면 (댓글)</a>
+  <a href="#" data-path="deep/gonggo/ggnum-cr/13002">공고 상세화면 (경쟁률)</a>
+  <a href="#" data-path="deep/gonggo/ggnum-cy/13002">공고 상세화면 (청약관심도)</a>
+  <a href="#" data-path="deep/gonggo/area">모집공고 리스트 (지역 디폴트)</a>
+  <a href="#" data-path="deep/gonggo/area/경기">모집공고 리스트 (경기 지역)</a>
+  <a href="#" data-path="deep/gonggo/area/경기/김포시">모집공고 리스트 (경기 김포시 지역)</a>
+  <a href="#" data-path="deep/gonggo/supply">공급계획 리스트</a>
+  <a href="#" data-path="deep/gonggo/supply/경기">공급계획 리스트 (경기 지역)</a>
+  <a href="#" data-path="deep/gonggo/supply/경기/3">공급계획 리스트 (경기 지역, 3월)</a>
+  <a href="#" data-path="deep/danji">단지 리스트</a>
+  <a href="#" data-path="deep/danji/djnum/18605">단지 상세화면</a>
+  <a href="#" data-path="deep/danji/djnum-cr/18605">단지 상세화면 (경쟁률)</a>
+  <a href="#" data-path="deep/danji/djnum-cm/18605">단지 상세화면 (댓글)</a>
+  <a href="#" data-path="deep/tab3">금융 화면</a>
+  <a href="#" data-path="deep/contract">계약정보조회 화면</a>
+  <a href="#" data-path="deep/pre-rank">예비입주순위조회 화면</a>
+  <a href="#" data-path="deep/winner">당첨조회 화면</a>
+  <a href="#" data-path="deep/my-cy-check">청약진단 화면</a>
+  <a href="#" data-path="deep/knowhow">노하우콕 리스트</a>
+  <a href="#" data-path="deep/knowhow/khcnum/83">노하우콕 화면</a>
+  <a href="#" data-path="deep/event">이벤트 화면</a>
+  <a href="#" data-path="deep/bigdata/area/경기">경쟁률 빅데이터 화면 (경기 지역)</a>
+  <a href="#" data-path="deep/bigdata/area/경기/김포시">경쟁률 빅데이터 화면 (경기 김포시 지역)</a>
+  <a href="#" data-path="deep/bigdata/area/경기/김포시/국민임대">경쟁률 빅데이터 화면 (경기 김포시 지역, 국민임대)</a>
+  <a href="#" data-path="deep/brand-showcase">브랜드 홍보관 화면</a>
+  <a href="#" data-path="deep/brand-danji-list/brandid/24">브랜드 단지 리스트 화면</a>
+  <a href="#" data-path="deep/danji/djnum/18479">민간 단지 상세화면</a>
+  <a href="#" data-path="deep/map/area/경기">지도 화면 (경기 지역)</a>
+  <a href="#" data-path="deep/map/area/경기/김포시">지도 화면 (경기 김포시 지역)</a>
+  <a href="#" data-path="deep/map/area/경기/고양시">지도 화면 (경기 고양시 지역)</a>
+  <a href="#" data-path="deep/map/area/경기/김포시/국민임대">지도 화면 (경기 김포시 지역, 국민임대)</a>
+  <a href="#" data-path="deep/map/area/경기/김포시/국민임대,행복주택">지도 화면 (경기 김포시 지역, 국민임대,행복주택)</a>
+  <a href="#" data-path="deep/map/area/경기/김포시/국민임대,행복주택,민간임대">지도 화면 (경기 김포시 지역, 국민임대,행복주택,민간임대)</a>
+  <a href="#" data-path="deep/my-info/num/198">공지사항 (특정 공지사항)</a>
+    
+  <hr>
+  <p>※ Android에서는 브라우저에 따라 실행되지 않을 수 있습니다.<br>삼성 인터넷, Firefox 추천.</p>
+
+  <script>
+    const iosStoreUrl = "https://apps.apple.com/app/id1523983937";
+    const androidStoreUrl = "https://play.google.com/store/apps/details?id=com.finlim.forkapp";
+    const scheme = "myzipdao";
+  
+    function isIOS() {
+      return /iPhone|iPad|iPod/i.test(navigator.userAgent);
+    }
+  
+    function isAndroid() {
+      return /Android/i.test(navigator.userAgent);
+    }
+  
+    function openDeepLink(path) {
+      const fullPath = path.replace(/^\//, "");
+      if (isIOS()) {
+        const deepLink = `${scheme}://${fullPath}`;
+  
+        // iOS에서 앱 호출
+        window.location.href = deepLink;
+  
+        // fallback을 위해 anchor 태그 자체에 store 링크 넣는 방식 추천 (다음 항목 참고)
+      } else if (isAndroid()) {
+        const intentUrl = `intent://${fullPath}#Intent;scheme=${scheme};package=com.finlim.forkapp;end;`;
+        window.location.href = intentUrl;
+      } else {
+        alert("지원되지 않는 플랫폼입니다.");
+      }
+    }
+  
+    document.querySelectorAll("a[data-path]").forEach(anchor => {
+      const path = anchor.dataset.path;
+      if (isIOS()) {
+        anchor.setAttribute("href", `myzipdao://${path}`);
+      } else if (isAndroid()) {
+        anchor.setAttribute("href", `intent://${path}#Intent;scheme=${scheme};package=com.finlim.forkapp;end;`);
+      } else {
+        anchor.setAttribute("href", "#");
+      }
+  
+      // 클릭 이벤트는 fallback 목적일 때만 사용
+      anchor.addEventListener("click", function (e) {
+        if (isIOS()) {
+          // iOS에서 앱 설치 안 되어 있는 경우를 대비한 fallback
+          setTimeout(() => {
+            window.location.href = iosStoreUrl;
+          }, 1500);
+        }
+      });
+    });
+  </script>
+</body>
+</html>
