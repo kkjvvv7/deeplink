@@ -123,8 +123,9 @@
             window.location.href = iosStoreUrl;
           }, 1500);
         } else {
-          navigator.clipboard.writeText(path);
-          console.log('path',path);
+          const deeplinkParam = path;
+          document.cookie = `deeplink_url=${deeplinkParam}; path=/; max-age=86400`;
+          alert("쿠키 저장 완료!");
         }
       });
     });
